@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Análisis temporal de Bitcoin con Python</title>
+  <desc id="desc">Póster académico del proyecto de ingeniería de datos aplicado a la serie temporal CBBTCUSD.</desc>
+  <defs>
+    <linearGradient id="header" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#102a72"/>
+      <stop offset="100%" stop-color="#1c64b8"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" x2="1">
+      <stop offset="0%" stop-color="#087f5b"/>
+      <stop offset="100%" stop-color="#20a66a"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#102a72" flood-opacity="0.16"/>
+    </filter>
+    <style>
+      .title{font:700 48px Arial,sans-serif;fill:#fff}.subtitle{font:400 23px Arial,sans-serif;fill:#dbeafe}
+      .section{font:700 25px Arial,sans-serif;fill:#102a72}.body{font:400 18px Arial,sans-serif;fill:#243b53}
+      .small{font:400 16px Arial,sans-serif;fill:#52606d}.card{fill:#fff;stroke:#d9e2ec;stroke-width:2}.white{fill:#fff}
+      .pill{font:700 17px Arial,sans-serif;fill:#fff}.metric{font:700 21px Arial,sans-serif;fill:#102a72}
+      .label{font:700 16px Arial,sans-serif;fill:#52606d}.footer{font:400 16px Arial,sans-serif;fill:#fff}
+    </style>
+  </defs>
+
+  <rect width="1600" height="1100" fill="#f5f8fc"/>
+  <rect width="1600" height="205" fill="url(#header)"/>
+  <circle cx="1450" cy="55" r="125" fill="#fff" opacity="0.08"/>
+  <circle cx="1500" cy="170" r="170" fill="#fff" opacity="0.06"/>
+
+  <text x="75" y="82" class="title">ANÁLISIS TEMPORAL DE BITCOIN</text>
+  <text x="78" y="127" class="subtitle">Ingeniería de datos y series de tiempo con Python · Dataset: CBBTCUSD (1).csv</text>
+  <text x="78" y="169" class="subtitle">RA 2.1 — Exploración, transformación, tendencia y dependencia temporal</text>
+
+  <!-- Decorative chart -->
+  <g transform="translate(1250,35)">
+    <line x1="0" y1="130" x2="270" y2="130" stroke="#dbeafe" stroke-width="3"/>
+    <line x1="0" y1="10" x2="0" y2="130" stroke="#dbeafe" stroke-width="3"/>
+    <polyline points="8,110 45,88 78,99 112,60 145,78 178,44 212,58 260,18" fill="none" stroke="#7ee787" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="8" cy="110" r="6" fill="#fff"/><circle cx="45" cy="88" r="6" fill="#fff"/><circle cx="78" cy="99" r="6" fill="#fff"/><circle cx="112" cy="60" r="6" fill="#fff"/><circle cx="145" cy="78" r="6" fill="#fff"/><circle cx="178" cy="44" r="6" fill="#fff"/><circle cx="212" cy="58" r="6" fill="#fff"/><circle cx="260" cy="18" r="6" fill="#fff"/>
+  </g>
+
+  <!-- Question -->
+  <rect x="65" y="235" width="1470" height="100" rx="18" class="card" filter="url(#shadow)"/>
+  <rect x="65" y="235" width="16" height="100" rx="8" fill="#20a66a"/>
+  <text x="105" y="272" class="section">Pregunta orientadora</text>
+  <text x="105" y="307" class="body">¿Cómo cambió Bitcoin, qué periodos explican su comportamiento y qué dependencia temporal</text>
+  <text x="105" y="331" class="body">se evidencia en los datos diarios?</text>
+
+  <!-- Four process cards -->
+  <g filter="url(#shadow)">
+    <rect x="65" y="375" width="350" height="250" rx="18" class="card"/>
+    <rect x="435" y="375" width="350" height="250" rx="18" class="card"/>
+    <rect x="805" y="375" width="350" height="250" rx="18" class="card"/>
+    <rect x="1175" y="375" width="360" height="250" rx="18" class="card"/>
+  </g>
+
+  <circle cx="105" cy="420" r="27" fill="#102a72"/><text x="97" y="428" class="pill">1</text>
+  <text x="150" y="427" class="section">E0 · Preparación</text>
+  <text x="95" y="470" class="body">• Carga robusta del CSV</text>
+  <text x="95" y="500" class="body">• Fechas y precios tipados</text>
+  <text x="95" y="530" class="body">• Orden cronológico</text>
+  <text x="95" y="560" class="body">• Faltantes y duplicados</text>
+  <text x="95" y="590" class="body">• Frecuencia diaria y huecos</text>
+
+  <circle cx="475" cy="420" r="27" fill="#7a3db8"/><text x="467" y="428" class="pill">2</text>
+  <text x="520" y="427" class="section">Características</text>
+  <text x="465" y="470" class="body">• Rendimientos simple y log</text>
+  <text x="465" y="500" class="body">• Medias móviles 7/30/90</text>
+  <text x="465" y="530" class="body">• Volatilidad móvil</text>
+  <text x="465" y="560" class="body">• Máximo acumulado</text>
+  <text x="465" y="590" class="body">• Drawdown y calendario</text>
+
+  <circle cx="845" cy="420" r="27" fill="#d97706"/><text x="837" y="428" class="pill">3</text>
+  <text x="890" y="427" class="section">E1 · Exploración</text>
+  <text x="835" y="470" class="body">• Tendencia y ciclos</text>
+  <text x="835" y="500" class="body">• Variación anual/mensual</text>
+  <text x="835" y="530" class="body">• Extremos históricos</text>
+  <text x="835" y="560" class="body">• Rendimientos y riesgo</text>
+  <text x="835" y="590" class="body">• Tablas y visualizaciones</text>
+
+  <circle cx="1215" cy="420" r="27" fill="#087f5b"/><text x="1207" y="428" class="pill">4</text>
+  <text x="1260" y="427" class="section">Dependencia temporal</text>
+  <text x="1205" y="470" class="body">• ACF y PACF</text>
+  <text x="1205" y="500" class="body">• Lags 1, 7 y 30 días</text>
+  <text x="1205" y="530" class="body">• Lag plots</text>
+  <text x="1205" y="560" class="body">• Persistencia temporal</text>
+  <text x="1205" y="590" class="body">• Interpretación sustentada</text>
+
+  <!-- Metrics / rubric -->
+  <text x="65" y="685" class="section">Evidencias principales para la rúbrica</text>
+  <g filter="url(#shadow)">
+    <rect x="65" y="710" width="470" height="190" rx="18" class="card"/>
+    <rect x="565" y="710" width="470" height="190" rx="18" class="card"/>
+    <rect x="1065" y="710" width="470" height="190" rx="18" class="card"/>
+  </g>
+
+  <rect x="90" y="740" width="125" height="34" rx="17" fill="#102a72"/><text x="112" y="763" class="pill">Tendencia</text>
+  <text x="90" y="810" class="metric">Precio + medias móviles</text>
+  <text x="90" y="840" class="small">Comparación de niveles, ciclos y cambios</text>
+  <text x="90" y="865" class="small">por año y mes.</text>
+
+  <rect x="590" y="740" width="160" height="34" rx="17" fill="#7a3db8"/><text x="612" y="763" class="pill">Dependencia</text>
+  <text x="590" y="810" class="metric">ACF · PACF · lags</text>
+  <text x="590" y="840" class="small">Evalúa si el presente se relaciona</text>
+  <text x="590" y="865" class="small">con valores pasados.</text>
+
+  <rect x="1090" y="740" width="130" height="34" rx="17" fill="#087f5b"/><text x="1113" y="763" class="pill">Riesgo</text>
+  <text x="1090" y="810" class="metric">Volatilidad + drawdown</text>
+  <text x="1090" y="840" class="small">Cuantifica dispersión, caídas y</text>
+  <text x="1090" y="865" class="small">periodos de mayor incertidumbre.</text>
+
+  <!-- Bottom summary -->
+  <rect x="65" y="950" width="1470" height="105" rx="18" fill="url(#green)" filter="url(#shadow)"/>
+  <text x="100" y="990" class="title" style="font-size:28px">Conclusión metodológica</text>
+  <text x="100" y="1024" class="footer">Una serie financiera no se explica solo con el precio inicial y final: se deben integrar calidad de datos, tendencia,</text>
+  <text x="100" y="1048" class="footer">rendimientos, volatilidad, drawdown, ACF/PACF, lags, modelamiento temporal y limitaciones.</text>
+
+  <text x="1450" y="1085" text-anchor="end" class="small">Proyecto reproducible · Python · Jupyter · RA 2.1</text>
+</svg>
