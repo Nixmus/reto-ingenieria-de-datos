@@ -1,333 +1,339 @@
-# 📈 Reto de Ingeniería de Datos: Análisis temporal de Bitcoin
+# 📈 Reto de Ciencia de Datos: análisis temporal de Bitcoin
 
-## 🎯 Propósito del proyecto
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange.svg)](https://jupyter.org/)
+[![Estado](https://img.shields.io/badge/estado-reproducible-success.svg)](#-reproducibilidad)
 
-Este repositorio contiene un análisis reproducible de la serie temporal diaria del precio de **Bitcoin en dólares estadounidenses (USD)**. El proyecto adapta el reto original de análisis de un portafolio de inversión a una base temporal con las columnas:
+## 1. Descripción general
 
-- `observation_date`: fecha de observación.
-- `CBBTCUSD`: precio de Bitcoin expresado en USD.
+Este proyecto adapta el reto **“¿Qué pasó con el portafolio?”** a una serie temporal financiera de Bitcoin. En lugar de comparar posiciones nacionales e internacionales en dos fechas, se estudia la evolución diaria del precio de Bitcoin expresado en dólares estadounidenses.
 
-El análisis busca responder visualmente y con evidencia numérica:
+El propósito es demostrar, mediante un flujo reproducible de Ciencia de Datos, cómo:
 
-1. ¿Cómo cambió el precio de Bitcoin durante el periodo observado?
-2. ¿Qué años o periodos explican principalmente el cambio global?
-3. ¿Qué nivel de volatilidad y riesgo presenta la serie?
-4. ¿Cómo puede construirse un análisis reproducible desde la preparación de datos hasta la interpretación?
+- preparar y validar datos temporales;
+- identificar los niveles de medición de las variables;
+- transformar una serie de precios mediante ingeniería de características;
+- realizar análisis exploratorio de datos (EDA);
+- comparar fechas, años y meses;
+- comunicar resultados mediante tablas y visualizaciones;
+- aplicar un modelo temporal de referencia;
+- interpretar resultados, riesgos y limitaciones.
 
----
-
-## 🗂️ Contenido del repositorio
-
-| Archivo | Descripción |
-|---|---|
-| [`Analisis_CBBTCUSD_Bitcoin.ipynb`](Analisis_CBBTCUSD_Bitcoin.ipynb) | Notebook completo con preparación, EDA, ingeniería de características, visualizaciones, modelamiento e interpretación. |
-| `CBBTCUSD (1).csv` | Base de datos requerida para ejecutar el notebook. Debe estar en la raíz del proyecto o en una ruta indicada por el notebook. |
-
-> El notebook busca automáticamente el CSV en varias ubicaciones. Si el archivo no está disponible, debe colocarse junto al notebook o en `/content/` cuando se utilice Google Colab.
+> **Alcance:** el análisis es académico y descriptivo. No constituye asesoría financiera ni permite establecer causalidad a partir del precio observado.
 
 ---
 
-## 🧭 Flujo metodológico
+## 2. Pregunta orientadora
+
+> **¿Cómo cambió el precio de Bitcoin durante el periodo disponible y qué periodos, características y medidas de riesgo explican mejor ese comportamiento?**
+
+### Preguntas específicas
+
+1. ¿Cuál fue el precio inicial y final?
+2. ¿Cuál fue el cambio absoluto y porcentual?
+3. ¿Cuáles fueron los valores mínimo y máximo y cuándo ocurrieron?
+4. ¿Qué años y meses presentaron mayores aumentos o caídas?
+5. ¿Qué tan variable y riesgosa fue la serie?
+6. ¿Qué tan bien funciona un baseline temporal sencillo?
+7. ¿Qué conclusiones pueden sostenerse y cuáles no pueden afirmarse con esta base?
+
+---
+
+## 3. Archivos del proyecto
+
+| Archivo | Función | Evidencia de la rúbrica |
+|---|---|---|
+| [`Analisis_CBBTCUSD_Bitcoin.ipynb`](Analisis_CBBTCUSD_Bitcoin.ipynb) | Notebook ejecutable con E0, E1, ingeniería de características, modelamiento y E2. | Evidencia técnica principal. |
+| [`CBBTCUSD (1).csv`](CBBTCUSD%20(1).csv) | Base diaria de precios, si se incorpora al repositorio. | Fuente de datos. |
+| `README.md` | Contexto, metodología, rúbrica, reproducibilidad y guía de presentación. | Evidencia de comunicación y planificación. |
+
+Si el CSV no está incluido en el repositorio, debe colocarse junto al notebook o cargarse en `/content/` en Google Colab.
+
+---
+
+## 4. Flujo metodológico
 
 ```text
-┌─────────────────────┐
-│ 1. Cargar la base   │
-└──────────┬──────────┘
-           ▼
-┌─────────────────────┐
-│ 2. Validar calidad  │
-│ tipos, faltantes,   │
-│ duplicados y fechas │
-└──────────┬──────────┘
-           ▼
-┌─────────────────────┐
-│ 3. Crear variables  │
-│ de tiempo, retornos,│
-│ medias y riesgo     │
-└──────────┬──────────┘
-           ▼
-┌─────────────────────┐
-│ 4. Explorar         │
-│ tendencias, ciclos, │
-│ extremos y cambios  │
-└──────────┬──────────┘
-           ▼
-┌─────────────────────┐
-│ 5. Visualizar       │
-│ precio, retornos,   │
-│ volatilidad y riesgo│
-└──────────┬──────────┘
-           ▼
-┌─────────────────────┐
-│ 6. Modelar          │
-│ baseline temporal   │
-└──────────┬──────────┘
-           ▼
-┌─────────────────────┐
-│ 7. Interpretar y    │
-│ comunicar resultados│
-└─────────────────────┘
+Problema
+   ↓
+E0. Preparación y calidad
+   ↓
+Niveles de medición
+   ↓
+Ingeniería de características
+   ↓
+E1. Análisis exploratorio
+   ↓
+Visualización y comparación temporal
+   ↓
+Modelo baseline sin fuga temporal
+   ↓
+E2. Interpretación, conclusión y limitaciones
+   ↓
+Comunicación y mesa redonda
 ```
 
+La secuencia responde al proceso de Ciencia de Datos y permite evidenciar no solo el resultado, sino también las decisiones tomadas para obtenerlo.
+
 ---
 
-## 🧪 E0 — Preparación y calidad de los datos
+## 5. E0 — Preparación y calidad de datos
 
-El notebook realiza las siguientes actividades:
+El notebook realiza estas comprobaciones:
 
-- Importa las librerías necesarias.
-- Localiza y carga el archivo CSV.
-- Convierte `observation_date` a formato fecha.
-- Convierte `CBBTCUSD` a formato numérico.
-- Ordena los registros cronológicamente.
-- Revisa:
-  - valores faltantes;
-  - fechas duplicadas;
-  - precios inválidos o no positivos;
-  - saltos o huecos temporales;
-  - estructura y periodo cubierto.
-- Conserva los valores faltantes como evidencia de calidad y evita imputarlos silenciosamente.
+- búsqueda robusta del archivo CSV;
+- validación de las columnas `observation_date` y `CBBTCUSD`;
+- conversión explícita de tipos;
+- ordenamiento cronológico;
+- detección de fechas inválidas;
+- detección de precios faltantes;
+- detección de fechas duplicadas;
+- detección de precios no positivos;
+- identificación de huecos temporales;
+- confirmación del periodo cubierto;
+- uso explícito de `dropna` solo cuando una operación requiere un valor observado.
 
-### 📏 Niveles de medición
+### Decisión sobre datos faltantes
 
-| Variable | Tipo | Justificación |
+Los faltantes no se convierten automáticamente en cero ni se imputan sin justificación. Se reportan primero. Las operaciones que necesitan precios consecutivos o ventanas completas producen `NaN` cuando no existe información suficiente.
+
+Esta decisión evita fabricar variaciones artificiales y constituye una práctica de calidad de datos.
+
+---
+
+## 6. Niveles de medición
+
+| Variable | Nivel / naturaleza | Uso analítico |
 |---|---|---|
-| `observation_date` | Temporal / ordinal | Permite ordenar las observaciones y estudiar evolución, ciclos y periodos. |
-| `CBBTCUSD` | Cuantitativa continua de razón | El precio tiene un cero significativo y permite comparar diferencias y proporciones. |
-| Rendimiento diario | Cuantitativa relativa | Permite comparar cambios porcentuales entre días con distintos niveles de precio. |
+| `observation_date` | Temporal y ordinal | Ordenar observaciones, agrupar por año/mes y estudiar evolución. |
+| `CBBTCUSD` | Cuantitativa continua de razón | Calcular diferencias, proporciones, promedios y extremos. |
+| Cambio absoluto | Cuantitativa de intervalo monetario | Medir cuánto cambió el precio en USD. |
+| Rendimiento simple | Cuantitativa relativa | Comparar variaciones entre días con distintos niveles de precio. |
+| Rendimiento logarítmico | Cuantitativa transformada | Analizar cambios acumulables y distribución de retornos. |
+| Drawdown | Medida relativa de pérdida | Estudiar caídas desde máximos acumulados. |
+
+El rendimiento porcentual es especialmente importante porque una diferencia de USD 1,000 no representa lo mismo cuando Bitcoin cotiza a USD 5,000 que cuando cotiza a USD 100,000.
 
 ---
 
-## 🛠️ Ingeniería de características
+## 7. Ingeniería de características
 
-Para transformar la serie y enriquecer el análisis se calculan:
+El notebook transforma la serie original en variables analíticas:
 
-- Cambio absoluto diario.
-- Rendimiento simple diario.
-- Rendimiento logarítmico.
-- Año, mes y trimestre.
-- Día de la semana.
-- Máximo acumulado.
-- `Drawdown`, o pérdida porcentual desde el máximo acumulado.
-- Medias móviles de 7, 30 y 90 días.
-- Volatilidad móvil de 30 días anualizada.
-- Indicadores de días de subida y caída.
+- `cambio_absoluto`;
+- `rendimiento_diario`;
+- `rendimiento_log`;
+- año, mes, trimestre y día de la semana;
+- `maximo_acumulado`;
+- `drawdown_pct`;
+- medias móviles de 7, 30 y 90 días;
+- volatilidad móvil de 30 días anualizada;
+- indicadores `subida` y `caida`.
 
-Estas transformaciones permiten pasar de una tabla de precios a una estructura útil para análisis exploratorio, comparación temporal y modelamiento.
+### Justificación
 
----
+Estas características permiten analizar cuatro dimensiones:
 
-## 📊 E1 — Análisis exploratorio
-
-El notebook calcula y presenta:
-
-### Indicadores principales
-
-- Fecha inicial y final.
-- Precio inicial y final.
-- Cambio absoluto.
-- Cambio porcentual acumulado.
-- Precio mínimo y fecha correspondiente.
-- Precio máximo y fecha correspondiente.
-- Número de observaciones.
-- Rendimiento medio diario.
-- Número de días positivos y negativos.
-- Mejor y peor rendimiento diario.
-- Volatilidad diaria.
-- Volatilidad anualizada usando 365 días.
-- Máximo `drawdown`.
-
-### Comparaciones temporales
-
-Se generan resúmenes:
-
-- Por año: primer precio, último precio, mínimo, máximo y variación porcentual.
-- Por mes: primer precio, último precio y variación porcentual.
-- Por periodo: contribución de cada año al cambio global.
-
-> Bitcoin opera continuamente, por lo que la volatilidad anualizada utiliza una aproximación de **365 días**.
+1. **Nivel:** precio observado.
+2. **Cambio:** diferencia absoluta y rendimiento.
+3. **Tendencia:** medias móviles.
+4. **Riesgo:** volatilidad y drawdown.
 
 ---
 
-## 📈 Visualizaciones incluidas
+## 8. E1 — Análisis exploratorio de datos
 
-El notebook contiene visualizaciones orientadas a responder la rúbrica de forma clara y visual:
+### Indicadores calculados
 
-| Visualización | Qué permite observar |
-|---|---|
-| Precio diario | Tendencia general y ciclos de mercado. |
-| Escala logarítmica | Crecimiento relativo entre etapas con niveles de precio muy diferentes. |
-| Medias móviles | Tendencia suavizada y posibles cambios de comportamiento. |
-| Rendimientos diarios | Variación relativa y días extremos. |
-| Histograma y KDE | Distribución de los rendimientos. |
-| Boxplot por año | Diferencias de dispersión y valores extremos entre años. |
-| Volatilidad móvil | Cambios en el nivel de riesgo a lo largo del tiempo. |
-| Drawdown | Correcciones y pérdidas desde máximos anteriores. |
-| Variación anual | Periodos de crecimiento y caída. |
-| Heatmap mensual | Patrones de variación por año y mes. |
-| Comparación temporal | Diferencia entre el inicio, el final y los periodos intermedios. |
-
----
-
-## 🤖 Modelamiento temporal
-
-Se implementa un baseline ingenuo:
-
-> La predicción del siguiente precio es el último precio observado.
-
-Características metodológicas:
-
-- Separación temporal 80/20.
-- No se mezclan aleatoriamente los registros.
-- El conjunto de prueba ocurre después del conjunto de entrenamiento.
-- Se calculan:
-  - **MAE**: error absoluto medio.
-  - **RMSE**: raíz del error cuadrático medio.
-  - **MAPE**: error porcentual absoluto medio.
-
-Este modelo no busca demostrar causalidad ni realizar recomendaciones de inversión. Su objetivo es proporcionar una referencia sencilla y reproducible para valorar el desempeño de modelos posteriores.
-
----
-
-## 🧠 E2 — Interpretación de resultados
-
-El notebook genera una interpretación automática con los valores calculados, incluyendo:
-
-- dirección del cambio global;
+- fecha inicial y final;
+- número de observaciones;
 - precio inicial y final;
 - cambio absoluto y porcentual;
-- mínimo y máximo históricos disponibles en la base;
-- año con mejor variación;
-- año con peor variación;
-- volatilidad anualizada;
-- máximo `drawdown`;
-- riesgos y limitaciones;
-- fecha final disponible en la base.
+- mínimo, máximo y fechas correspondientes;
+- estadísticos descriptivos;
+- media y dispersión de rendimientos;
+- días positivos, negativos y sin cambio;
+- mejor y peor día;
+- volatilidad diaria;
+- volatilidad anualizada con 365 días;
+- máximo drawdown.
 
-### Interpretación recomendada
+### Comparación temporal
 
-El precio inicial y final no deben analizarse de manera aislada. Una conclusión completa debe considerar:
+Se construyen tablas:
 
-1. La trayectoria completa.
-2. Los periodos de crecimiento y corrección.
-3. Los rendimientos diarios.
-4. La volatilidad.
-5. Las pérdidas desde máximos.
-6. La calidad y continuidad de los datos.
+- **anuales:** primer precio, último precio, mínimo, máximo y variación;
+- **mensuales:** primer precio, último precio y variación;
+- **por periodos:** identificación de los años con mayor contribución positiva o negativa.
 
-El análisis es descriptivo y educativo. No constituye asesoría financiera ni permite inferir causalidad únicamente a partir de los precios observados.
+La comparación inicial/final responde al planteamiento del reto, mientras que la desagregación anual y mensual evita una interpretación incompleta.
 
 ---
 
-## ✅ Correspondencia con la rúbrica de evaluación
+## 9. Visualizaciones y propósito
 
-### Resultado de Aprendizaje — RA 1.1
-
-> Analiza y explica los fundamentos de la ingeniería de datos y de la ingeniería de características dentro del proceso de Ciencia de Datos, incluyendo los niveles de medición de los datos y las técnicas de transformación.
-
-| Criterio de la rúbrica | Evidencia en el proyecto |
+| Gráfico | Evidencia que aporta |
 |---|---|
-| Comprensión del problema | El README y el notebook explican el objetivo, las variables y la adaptación del reto de portafolio a una serie temporal de Bitcoin. |
-| Preparación de datos | Carga robusta, conversión de tipos, ordenamiento y validación de estructura. |
-| Calidad de datos | Revisión de faltantes, duplicados, precios no positivos y huecos temporales. |
-| Niveles de medición | Clasificación explicada de fecha, precio y rendimientos. |
-| Transformación de datos | Creación de cambios, rendimientos, variables calendario, medias móviles, volatilidad y drawdown. |
-| Análisis exploratorio | Estadísticos descriptivos, extremos, periodos, rendimientos positivos/negativos y tablas anual/mensual. |
-| Comparación de periodos | Comparación entre fecha inicial y final, además del análisis por año y mes. |
-| Visualización | Gráficos de precio, escala logarítmica, medias móviles, rendimientos, distribución, volatilidad, drawdown, variación anual y heatmap. |
-| Modelamiento | Baseline temporal con separación cronológica y métricas MAE, RMSE y MAPE. |
-| Interpretación | Respuestas automáticas, discusión de riesgo, limitaciones y conclusión basada en datos. |
-| Comunicación | Notebook organizado por etapas, tablas, gráficos, títulos y explicaciones en español. |
+| Precio diario | Tendencia, ciclos y cambios de régimen visuales. |
+| Precio en escala logarítmica | Comparación de crecimientos relativos a lo largo del tiempo. |
+| Medias móviles | Tendencia suavizada y comportamiento de corto/mediano plazo. |
+| Rendimiento diario | Variaciones relativas y días extremos. |
+| Histograma/KDE | Forma y concentración de la distribución de retornos. |
+| Boxplot anual | Comparación de dispersión y valores extremos por año. |
+| Volatilidad móvil | Evolución dinámica del riesgo. |
+| Drawdown | Profundidad de las correcciones desde máximos. |
+| Barras de variación anual | Periodos de crecimiento y caída. |
+| Heatmap mensual | Patrones de variación por año y mes. |
+| Real vs. baseline | Evaluación visual del modelo temporal. |
 
-### Escala de desempeño
-
-#### 🟥 Nivel bajo
-
-- No se carga o valida correctamente la base.
-- No se explican las variables.
-- No se calculan cambios ni rendimientos.
-- No hay interpretación sustentada en resultados.
-
-#### 🟨 Nivel medio
-
-- Se realiza parte del EDA.
-- Se calculan algunas variaciones.
-- Hay gráficos o tablas, pero la interpretación es parcial.
-- No se analizan suficientemente riesgo, calidad de datos o periodos intermedios.
-
-#### 🟩 Nivel alto
-
-- El flujo completo es reproducible.
-- Se justifican las transformaciones.
-- Se revisa la calidad de los datos.
-- Se usan medidas relativas, volatilidad y drawdown.
-- Se comparan fechas y periodos.
-- Las visualizaciones respaldan la explicación.
-- El modelamiento respeta el orden temporal.
-- La conclusión integra resultados, riesgos y limitaciones.
+Todas las visualizaciones incluyen títulos, ejes, unidades y leyendas cuando son necesarias.
 
 ---
 
-## 🎙️ Aspectos que requieren la mesa redonda
+## 10. Modelamiento y prevención de fuga temporal
 
-El código puede demostrar el análisis técnico, pero no puede evaluar completamente:
+Se utiliza un baseline ingenuo que predice el precio siguiente con el último precio disponible.
 
-- participación en la mesa redonda;
-- claridad de la exposición oral;
-- capacidad para responder preguntas;
-- discusión de diferencias entre grupos;
-- defensa de las decisiones metodológicas;
-- trabajo colaborativo.
+### Protocolo
 
-Para la presentación oral, se recomienda explicar en este orden:
+- división cronológica 80/20;
+- no se mezclan los registros;
+- el entrenamiento precede al conjunto de prueba;
+- el modelo no utiliza información futura;
+- evaluación con MAE, RMSE y MAPE.
 
-1. **Qué contiene la base.**
-2. **Qué cambios se realizaron.**
-3. **Cuál fue el comportamiento general del precio.**
-4. **Qué periodo tuvo mayor crecimiento o caída.**
-5. **Qué riesgos se observaron.**
-6. **Cuál es la conclusión principal.**
+### Interpretación correcta
+
+El baseline no pretende ser un modelo predictivo definitivo. Sirve como punto de comparación para futuros modelos de series de tiempo. Un error bajo no implica causalidad ni garantiza resultados futuros.
 
 ---
 
-## ▶️ Cómo ejecutar el proyecto
+## 11. E2 — Interpretación y conclusión
 
-### Opción 1: Jupyter Notebook
+El notebook genera una interpretación basada en los valores calculados y debe responder:
+
+### ¿Cómo cambió Bitcoin?
+
+Se comparan fecha inicial, fecha final, cambio absoluto, variación porcentual, mínimo, máximo y trayectoria intermedia.
+
+### ¿Qué periodos explican el resultado?
+
+Se identifican el mejor y peor año, junto con los cambios mensuales y el aporte de cada periodo al cambio global.
+
+### ¿Qué riesgos se observan?
+
+Se utilizan volatilidad diaria, volatilidad anualizada, mejores/peores días y máximo drawdown.
+
+### ¿Cuál es la conclusión?
+
+La conclusión debe integrar:
+
+- resultado global;
+- trayectoria y ciclos;
+- rendimiento relativo;
+- riesgo;
+- calidad de los datos;
+- limitaciones del análisis.
+
+No es suficiente afirmar que “el precio subió” o “el precio bajó”; se debe justificar la afirmación con valores, tablas y gráficos.
+
+---
+
+## 12. Matriz de cumplimiento de la rúbrica
+
+### Resultado de Aprendizaje RA 1.1
+
+> Analiza y explica los fundamentos de la ingeniería de datos y de la ingeniería de características dentro del proceso de Ciencia de Datos, incluyendo niveles de medición y técnicas de transformación.
+
+| Criterio | Evidencia concreta | Ubicación |
+|---|---|---|
+| Comprensión del problema | Pregunta orientadora, objetivos y adaptación explícita del reto original. | README y primera sección del notebook |
+| Preparación de datos | Carga, tipos, ordenamiento y selección de columnas. | Sección E0 |
+| Calidad de datos | Faltantes, duplicados, valores inválidos y huecos temporales. | Sección E0 |
+| Niveles de medición | Tabla con naturaleza y uso de cada variable. | README y E0 |
+| Ingeniería de características | Cambios, retornos, calendario, ventanas, volatilidad y drawdown. | Sección de características |
+| EDA | Estadísticos, extremos, días positivos/negativos y resúmenes temporales. | Sección E1 |
+| Comparación | Fecha inicial/final y comparación anual/mensual. | E1 |
+| Visualización | Gráficos de nivel, retornos, tendencia, distribución y riesgo. | E1 |
+| Modelamiento | Baseline, split temporal y métricas. | Sección de modelamiento |
+| Interpretación | Respuestas automáticas y conclusión basada en datos. | E2 |
+| Limitaciones | Discusión de faltantes, volatilidad, causalidad y variables no observadas. | E2 y README |
+| Comunicación | Markdown, tablas, títulos, unidades, guía de ejecución y presentación. | Notebook y README |
+
+### Criterios para aspirar al nivel alto
+
+- El notebook se ejecuta en orden sin depender de cifras escritas manualmente.
+- Cada transformación tiene una justificación.
+- Los faltantes y decisiones de limpieza se documentan.
+- Se analizan niveles y variaciones relativas.
+- Las gráficas respaldan, no reemplazan, la interpretación.
+- El modelo respeta el orden temporal.
+- La conclusión utiliza resultados calculados.
+- Se reconocen límites y no se realizan afirmaciones causales.
+
+---
+
+## 13. Guion para la mesa redonda
+
+Cada grupo puede presentar en 3–5 minutos:
+
+1. **Problema:** qué representa la base.
+2. **Calidad:** qué faltantes o irregularidades se detectaron.
+3. **Transformación:** qué características se crearon y por qué.
+4. **Resultado:** cómo cambió el precio entre los extremos.
+5. **Periodos clave:** qué año o mes tuvo mayor crecimiento o caída.
+6. **Riesgo:** volatilidad y drawdown observados.
+7. **Conclusión:** qué ocurrió y qué no puede afirmarse.
+8. **Limitación:** qué información adicional sería necesaria.
+
+El código no puede evaluar por sí solo la participación, la claridad oral, la defensa de decisiones ni el trabajo colaborativo; esos elementos deben demostrarse durante la mesa redonda.
+
+---
+
+## 14. Reproducibilidad
+
+### Instalación
 
 ```bash
 pip install pandas numpy matplotlib seaborn scikit-learn jupyter
+```
+
+### Ejecución
+
+```bash
 jupyter notebook Analisis_CBBTCUSD_Bitcoin.ipynb
 ```
 
-### Opción 2: JupyterLab
+También puede ejecutarse en JupyterLab o Google Colab. En Colab, sube primero el archivo `CBBTCUSD (1).csv`.
 
-```bash
-pip install pandas numpy matplotlib seaborn scikit-learn jupyterlab
-jupyter lab
-```
+### Verificación mínima
 
-### Opción 3: Google Colab
+Antes de interpretar resultados, confirma que el notebook:
 
-1. Abre el notebook en Colab.
-2. Sube `CBBTCUSD (1).csv` al entorno.
-3. Ejecuta las celdas en orden.
-
----
-
-## ⚠️ Limitaciones
-
-- El análisis depende de las fechas disponibles en el CSV.
-- Los valores faltantes pueden afectar rendimientos y ventanas móviles.
-- El precio de Bitcoin es altamente volátil.
-- El baseline no es un modelo financiero completo.
-- No se incluyen variables externas como inflación, tasas de interés, regulación, volumen, liquidez o noticias.
-- No se deben realizar afirmaciones causales únicamente con esta base.
-- La conclusión no debe interpretarse como recomendación de inversión.
+- encuentra el CSV;
+- muestra las columnas esperadas;
+- reporta el periodo real disponible;
+- no presenta errores en las celdas;
+- genera tablas y gráficos;
+- calcula las métricas del baseline;
+- imprime la conclusión con valores provenientes de la base.
 
 ---
 
-## 📌 Conclusión del proyecto
+## 15. Limitaciones
 
-Este proyecto demuestra un flujo completo de Ciencia de Datos aplicado a una serie temporal financiera: se parte de datos crudos, se verifica su calidad, se transforman las variables, se explora el comportamiento, se construyen visualizaciones, se evalúa un baseline temporal y se comunica una conclusión sustentada en evidencia.
+- El análisis depende del periodo que realmente contiene el CSV.
+- Un valor faltante puede afectar rendimientos y ventanas móviles.
+- Bitcoin es un activo altamente volátil.
+- El precio no incluye volumen, liquidez, inflación, tasas, regulación, noticias u otras variables externas.
+- El baseline es intencionalmente sencillo.
+- No se realizan pruebas de causalidad.
+- Las conclusiones son descriptivas y no constituyen recomendaciones de inversión.
 
-La principal enseñanza es que una variación entre dos fechas no es suficiente para comprender una serie financiera. Es necesario analizar también la trayectoria, los rendimientos, la volatilidad, los máximos, las caídas y las limitaciones de los datos.
+---
+
+## 16. Cierre
+
+El proyecto evidencia un proceso completo de Ciencia de Datos aplicado a una serie financiera: se define una pregunta, se inspecciona la calidad de los datos, se transforman variables, se explora el comportamiento, se visualizan patrones, se evalúa un baseline respetando el tiempo y se comunica una conclusión sustentada.
+
+La idea central es que comparar únicamente el precio inicial y final no basta. Una interpretación sólida también considera rendimientos, tendencia, volatilidad, drawdown, periodos intermedios, calidad de datos y limitaciones metodológicas.
