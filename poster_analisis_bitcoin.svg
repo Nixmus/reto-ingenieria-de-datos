@@ -1,119 +1,169 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100" role="img" aria-labelledby="title desc">
-  <title id="title">Análisis temporal de Bitcoin con Python</title>
-  <desc id="desc">Póster académico del proyecto de ingeniería de datos aplicado a la serie temporal CBBTCUSD.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Análisis temporal de Bitcoin</title>
+  <desc id="desc">Póster académico sobre ingeniería de datos y series de tiempo con Python.</desc>
   <defs>
-    <linearGradient id="header" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#102a72"/>
-      <stop offset="100%" stop-color="#1c64b8"/>
-    </linearGradient>
-    <linearGradient id="green" x1="0" x2="1">
-      <stop offset="0%" stop-color="#087f5b"/>
-      <stop offset="100%" stop-color="#20a66a"/>
-    </linearGradient>
     <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#102a72" flood-opacity="0.16"/>
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#102a43" flood-opacity="0.16"/>
     </filter>
+    <linearGradient id="blueHeader" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#114b9b"/><stop offset="1" stop-color="#1769aa"/>
+    </linearGradient>
+    <linearGradient id="purpleHeader" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#572b86"/><stop offset="1" stop-color="#7b3fb1"/>
+    </linearGradient>
     <style>
-      .title{font:700 48px Arial,sans-serif;fill:#fff}.subtitle{font:400 23px Arial,sans-serif;fill:#dbeafe}
-      .section{font:700 25px Arial,sans-serif;fill:#102a72}.body{font:400 18px Arial,sans-serif;fill:#243b53}
-      .small{font:400 16px Arial,sans-serif;fill:#52606d}.card{fill:#fff;stroke:#d9e2ec;stroke-width:2}.white{fill:#fff}
-      .pill{font:700 17px Arial,sans-serif;fill:#fff}.metric{font:700 21px Arial,sans-serif;fill:#102a72}
-      .label{font:700 16px Arial,sans-serif;fill:#52606d}.footer{font:400 16px Arial,sans-serif;fill:#fff}
+      .title{font:800 49px Arial,sans-serif;fill:#102a72;letter-spacing:1px}
+      .subtitle{font:700 23px Arial,sans-serif;fill:#243b53}
+      .section{font:800 16px Arial,sans-serif;fill:#fff}
+      .cardtitle{font:800 18px Arial,sans-serif;fill:#102a72}
+      .body{font:400 15px Arial,sans-serif;fill:#243b53}
+      .small{font:400 13px Arial,sans-serif;fill:#52606d}
+      .metric{font:800 17px Arial,sans-serif;fill:#243b53}
+      .metricSmall{font:400 13px Arial,sans-serif;fill:#52606d}
+      .footer{font:800 15px Arial,sans-serif;fill:#102a72}
+      .iconStroke{stroke:#1261a0;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
     </style>
   </defs>
 
-  <rect width="1600" height="1100" fill="#f5f8fc"/>
-  <rect width="1600" height="205" fill="url(#header)"/>
-  <circle cx="1450" cy="55" r="125" fill="#fff" opacity="0.08"/>
-  <circle cx="1500" cy="170" r="170" fill="#fff" opacity="0.06"/>
+  <rect width="1536" height="1024" fill="#ffffff"/>
+  <rect x="0" y="0" width="1536" height="8" fill="#123f82"/>
 
-  <text x="75" y="82" class="title">ANÁLISIS TEMPORAL DE BITCOIN</text>
-  <text x="78" y="127" class="subtitle">Ingeniería de datos y series de tiempo con Python · Dataset: CBBTCUSD (1).csv</text>
-  <text x="78" y="169" class="subtitle">RA 2.1 — Exploración, transformación, tendencia y dependencia temporal</text>
+  <!-- Left title column -->
+  <text x="42" y="83" class="title">ANÁLISIS</text>
+  <text x="42" y="137" class="title">TEMPORAL</text>
+  <text x="42" y="191" class="title">DE</text>
+  <text x="42" y="245" class="title">BITCOIN</text>
+  <rect x="45" y="274" width="118" height="5" rx="2" fill="#1769aa"/>
+  <text x="45" y="324" class="subtitle">Ingeniería de datos y</text>
+  <text x="45" y="354" class="subtitle">series de tiempo con Python</text>
 
-  <!-- Decorative chart -->
-  <g transform="translate(1250,35)">
-    <line x1="0" y1="130" x2="270" y2="130" stroke="#dbeafe" stroke-width="3"/>
-    <line x1="0" y1="10" x2="0" y2="130" stroke="#dbeafe" stroke-width="3"/>
-    <polyline points="8,110 45,88 78,99 112,60 145,78 178,44 212,58 260,18" fill="none" stroke="#7ee787" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-    <circle cx="8" cy="110" r="6" fill="#fff"/><circle cx="45" cy="88" r="6" fill="#fff"/><circle cx="78" cy="99" r="6" fill="#fff"/><circle cx="112" cy="60" r="6" fill="#fff"/><circle cx="145" cy="78" r="6" fill="#fff"/><circle cx="178" cy="44" r="6" fill="#fff"/><circle cx="212" cy="58" r="6" fill="#fff"/><circle cx="260" cy="18" r="6" fill="#fff"/>
+  <!-- Left concepts -->
+  <g transform="translate(45,410)">
+    <rect x="0" y="0" width="38" height="38" rx="8" fill="#e8f1fb"/>
+    <rect x="10" y="10" width="18" height="18" class="iconStroke"/>
+    <line x1="10" y1="16" x2="28" y2="16" class="iconStroke"/><line x1="16" y1="10" x2="16" y2="28" class="iconStroke"/>
+    <text x="54" y="18" class="cardtitle">Serie temporal</text><text x="54" y="38" class="small">Observaciones diarias ordenadas</text><text x="54" y="54" class="small">por fecha de Bitcoin.</text>
+  </g>
+  <g transform="translate(45,490)">
+    <rect x="0" y="0" width="38" height="38" rx="8" fill="#e8f1fb"/>
+    <polyline points="8,28 15,22 21,25 28,10" class="iconStroke"/><line x1="8" y1="30" x2="31" y2="30" class="iconStroke"/>
+    <text x="54" y="18" class="cardtitle">Volatilidad</text><text x="54" y="38" class="small">Magnitud de las variaciones</text><text x="54" y="54" class="small">diarias del retorno.</text>
+  </g>
+  <g transform="translate(45,570)">
+    <rect x="0" y="0" width="38" height="38" rx="8" fill="#e8f1fb"/>
+    <polyline points="8,10 8,29 30,29" class="iconStroke"/><polyline points="10,16 17,19 22,25 29,28" class="iconStroke"/>
+    <text x="54" y="18" class="cardtitle">Drawdown</text><text x="54" y="38" class="small">Caída desde un máximo</text><text x="54" y="54" class="small">histórico hasta un mínimo.</text>
+  </g>
+  <g transform="translate(45,650)">
+    <rect x="0" y="0" width="38" height="38" rx="8" fill="#fff1d6"/>
+    <text x="10" y="28" style="font:800 24px Arial;fill:#d97706">Py</text>
+    <text x="54" y="18" class="cardtitle">Python</text><text x="54" y="38" class="small">Lenguaje para análisis,</text><text x="54" y="54" class="small">visualización y modelamiento.</text>
+  </g>
+  <g transform="translate(45,730)">
+    <rect x="0" y="0" width="38" height="38" rx="8" fill="#eee8fb"/>
+    <text x="9" y="27" style="font:800 25px Arial;fill:#572b86">&lt;/&gt;</text>
+    <text x="54" y="18" class="cardtitle">Herramientas clave</text><text x="54" y="38" class="small">pandas · numpy · matplotlib</text><text x="54" y="54" class="small">statsmodels · scikit-learn</text>
   </g>
 
-  <!-- Question -->
-  <rect x="65" y="235" width="1470" height="100" rx="18" class="card" filter="url(#shadow)"/>
-  <rect x="65" y="235" width="16" height="100" rx="8" fill="#20a66a"/>
-  <text x="105" y="272" class="section">Pregunta orientadora</text>
-  <text x="105" y="307" class="body">¿Cómo cambió Bitcoin, qué periodos explican su comportamiento y qué dependencia temporal</text>
-  <text x="105" y="331" class="body">se evidencia en los datos diarios?</text>
+  <!-- Objective box -->
+  <rect x="35" y="845" width="257" height="125" rx="12" fill="#eaf3ff"/>
+  <circle cx="70" cy="883" r="19" fill="#1769aa"/>
+  <circle cx="70" cy="883" r="7" fill="none" stroke="#fff" stroke-width="2"/><circle cx="70" cy="883" r="13" fill="none" stroke="#fff" stroke-width="2"/>
+  <text x="103" y="881" class="cardtitle">OBJETIVO</text>
+  <text x="55" y="914" class="small">Construir, analizar y modelar</text><text x="55" y="932" class="small">una serie temporal de Bitcoin</text><text x="55" y="950" class="small">para comprender su comportamiento.</text>
 
-  <!-- Four process cards -->
-  <g filter="url(#shadow)">
-    <rect x="65" y="375" width="350" height="250" rx="18" class="card"/>
-    <rect x="435" y="375" width="350" height="250" rx="18" class="card"/>
-    <rect x="805" y="375" width="350" height="250" rx="18" class="card"/>
-    <rect x="1175" y="375" width="360" height="250" rx="18" class="card"/>
-  </g>
+  <!-- Main columns -->
+  <!-- Card 1 -->
+  <g filter="url(#shadow)"><rect x="320" y="42" width="282" height="354" rx="12" fill="#fff" stroke="#d9e2ec" stroke-width="2"/></g>
+  <rect x="320" y="42" width="282" height="43" rx="12" fill="url(#blueHeader)"/><rect x="320" y="73" width="282" height="12" fill="url(#blueHeader)"/>
+  <text x="461" y="69" text-anchor="middle" class="section">E0 · PREPARACIÓN Y CALIDAD</text>
+  <g transform="translate(343,111)"><ellipse cx="16" cy="7" rx="14" ry="6" class="iconStroke"/><path d="M2 7v16c0 4 28 4 28 0V7" class="iconStroke"/><ellipse cx="16" cy="23" rx="14" ry="6" class="iconStroke"/></g>
+  <text x="385" y="122" class="cardtitle">Adquisición</text><text x="385" y="143" class="small">CSV histórico de Bitcoin.</text>
+  <g transform="translate(343,177)"><rect x="3" y="3" width="27" height="27" class="iconStroke"/><line x1="3" y1="12" x2="30" y2="12" class="iconStroke"/><line x1="3" y1="21" x2="30" y2="21" class="iconStroke"/><line x1="12" y1="3" x2="12" y2="30" class="iconStroke"/><line x1="21" y1="3" x2="21" y2="30" class="iconStroke"/></g>
+  <text x="385" y="188" class="cardtitle">Limpieza</text><text x="385" y="209" class="small">Faltantes, duplicados y</text><text x="385" y="226" class="small">precios no positivos.</text>
+  <g transform="translate(343,260)"><rect x="4" y="7" width="25" height="22" class="iconStroke"/><line x1="9" y1="3" x2="9" y2="11" class="iconStroke"/><line x1="24" y1="3" x2="24" y2="11" class="iconStroke"/><line x1="4" y1="14" x2="29" y2="14" class="iconStroke"/></g>
+  <text x="385" y="271" class="cardtitle">Alineación temporal</text><text x="385" y="292" class="small">Orden cronológico y</text><text x="385" y="309" class="small">frecuencia diaria.</text>
+  <g transform="translate(343,343)"><path d="M16 2l13 5v9c0 8-6 13-13 16C9 29 3 24 3 16V7z" class="iconStroke"/><path d="M9 16l5 5 9-10" class="iconStroke"/></g>
+  <text x="385" y="354" class="cardtitle">Validación</text><text x="385" y="375" class="small">Consistencia y trazabilidad.</text>
 
-  <circle cx="105" cy="420" r="27" fill="#102a72"/><text x="97" y="428" class="pill">1</text>
-  <text x="150" y="427" class="section">E0 · Preparación</text>
-  <text x="95" y="470" class="body">• Carga robusta del CSV</text>
-  <text x="95" y="500" class="body">• Fechas y precios tipados</text>
-  <text x="95" y="530" class="body">• Orden cronológico</text>
-  <text x="95" y="560" class="body">• Faltantes y duplicados</text>
-  <text x="95" y="590" class="body">• Frecuencia diaria y huecos</text>
+  <!-- Card 2 -->
+  <g filter="url(#shadow)"><rect x="620" y="42" width="282" height="354" rx="12" fill="#fff" stroke="#d9e2ec" stroke-width="2"/></g>
+  <rect x="620" y="42" width="282" height="43" rx="12" fill="url(#blueHeader)"/><rect x="620" y="73" width="282" height="12" fill="url(#blueHeader)"/>
+  <text x="761" y="69" text-anchor="middle" class="section">INGENIERÍA DE CARACTERÍSTICAS</text>
+  <g transform="translate(643,113)"><polyline points="3,28 11,20 17,24 28,8" class="iconStroke"/><line x1="3" y1="30" x2="31" y2="30" class="iconStroke"/></g>
+  <text x="685" y="122" class="cardtitle">Retornos</text><text x="685" y="143" class="small">Simples y logarítmicos.</text>
+  <g transform="translate(643,180)"><polyline points="2,17 7,17 10,8 14,26 18,11 22,20 27,12 31,12" class="iconStroke"/></g>
+  <text x="685" y="188" class="cardtitle">Volatilidad</text><text x="685" y="209" class="small">Ventana móvil y anualizada.</text>
+  <g transform="translate(643,260)"><polyline points="3,8 3,29 30,29" class="iconStroke"/><polyline points="6,13 13,16 19,22 29,27" class="iconStroke"/></g>
+  <text x="685" y="271" class="cardtitle">Drawdown</text><text x="685" y="292" class="small">Caída desde el máximo</text><text x="685" y="309" class="small">acumulado.</text>
+  <g transform="translate(643,344)"><rect x="4" y="15" width="5" height="15" fill="#1769aa"/><rect x="13" y="8" width="5" height="22" fill="#1769aa"/><rect x="22" y="2" width="5" height="28" fill="#1769aa"/></g>
+  <text x="685" y="354" class="cardtitle">Variables adicionales</text><text x="685" y="375" class="small">Medias móviles y calendario.</text>
 
-  <circle cx="475" cy="420" r="27" fill="#7a3db8"/><text x="467" y="428" class="pill">2</text>
-  <text x="520" y="427" class="section">Características</text>
-  <text x="465" y="470" class="body">• Rendimientos simple y log</text>
-  <text x="465" y="500" class="body">• Medias móviles 7/30/90</text>
-  <text x="465" y="530" class="body">• Volatilidad móvil</text>
-  <text x="465" y="560" class="body">• Máximo acumulado</text>
-  <text x="465" y="590" class="body">• Drawdown y calendario</text>
+  <!-- Card 3 -->
+  <g filter="url(#shadow)"><rect x="920" y="42" width="282" height="354" rx="12" fill="#fff" stroke="#d9e2ec" stroke-width="2"/></g>
+  <rect x="920" y="42" width="282" height="43" rx="12" fill="url(#blueHeader)"/><rect x="920" y="73" width="282" height="12" fill="url(#blueHeader)"/>
+  <text x="1061" y="69" text-anchor="middle" class="section">E1 · ANÁLISIS EXPLORATORIO</text>
+  <g transform="translate(943,113)"><polyline points="2,27 10,19 16,23 28,8" class="iconStroke"/><line x1="2" y1="30" x2="31" y2="30" class="iconStroke"/></g>
+  <text x="985" y="122" class="cardtitle">Serie temporal</text><text x="985" y="143" class="small">Evolución del precio.</text>
+  <g transform="translate(943,180)"><polyline points="2,17 7,17 10,8 14,26 18,11 22,20 27,12 31,12" class="iconStroke"/></g>
+  <text x="985" y="188" class="cardtitle">Riesgo dinámico</text><text x="985" y="209" class="small">Volatilidad y cambios</text><text x="985" y="226" class="small">por periodo.</text>
+  <g transform="translate(943,260)"><polyline points="3,8 3,29 30,29" class="iconStroke"/><polyline points="6,13 13,16 19,22 29,27" class="iconStroke"/></g>
+  <text x="985" y="271" class="cardtitle">Drawdown</text><text x="985" y="292" class="small">Identificación de caídas</text><text x="985" y="309" class="small">relevantes.</text>
+  <g transform="translate(943,344)"><rect x="4" y="15" width="5" height="15" fill="#1769aa"/><rect x="13" y="8" width="5" height="22" fill="#1769aa"/><rect x="22" y="2" width="5" height="28" fill="#1769aa"/></g>
+  <text x="985" y="354" class="cardtitle">Distribuciones</text><text x="985" y="375" class="small">Asimetría y valores extremos.</text>
 
-  <circle cx="845" cy="420" r="27" fill="#d97706"/><text x="837" y="428" class="pill">3</text>
-  <text x="890" y="427" class="section">E1 · Exploración</text>
-  <text x="835" y="470" class="body">• Tendencia y ciclos</text>
-  <text x="835" y="500" class="body">• Variación anual/mensual</text>
-  <text x="835" y="530" class="body">• Extremos históricos</text>
-  <text x="835" y="560" class="body">• Rendimientos y riesgo</text>
-  <text x="835" y="590" class="body">• Tablas y visualizaciones</text>
+  <!-- Right metrics -->
+  <g filter="url(#shadow)"><rect x="1220" y="42" width="275" height="354" rx="12" fill="#fff" stroke="#d9e2ec" stroke-width="2"/></g>
+  <rect x="1220" y="42" width="275" height="43" rx="12" fill="#102a72"/><rect x="1220" y="73" width="275" height="12" fill="#102a72"/>
+  <text x="1357" y="69" text-anchor="middle" class="section">MÉTRICAS CLAVE</text>
+  <g transform="translate(1245,111)"><circle cx="20" cy="20" r="19" fill="#16a05d"/><polyline points="10,27 16,21 21,24 29,13" fill="none" stroke="#fff" stroke-width="2"/><text x="57" y="25" class="metric">Tendencia</text></g>
+  <g transform="translate(1245,161)"><circle cx="20" cy="20" r="19" fill="#7b3fb1"/><path d="M9 22c4-15 8 15 12 0s8 15 12 0" fill="none" stroke="#fff" stroke-width="2"/><text x="57" y="25" class="metric">Volatilidad</text></g>
+  <g transform="translate(1245,211)"><circle cx="20" cy="20" r="19" fill="#1769aa"/><polyline points="10,10 10,30 31,30 14,18" fill="none" stroke="#fff" stroke-width="2"/><text x="57" y="25" class="metric">Drawdown</text></g>
+  <g transform="translate(1245,261)"><circle cx="20" cy="20" r="19" fill="#168aad"/><rect x="10" y="20" width="4" height="10" fill="#fff"/><rect x="17" y="14" width="4" height="16" fill="#fff"/><rect x="24" y="8" width="4" height="22" fill="#fff"/><text x="57" y="25" class="metric">Retorno</text></g>
+  <g transform="translate(1245,311)"><circle cx="20" cy="20" r="19" fill="#572b86"/><text x="12" y="27" style="font:800 20px Arial;fill:#fff">%</text><text x="57" y="25" class="metric">Riesgo</text></g>
+  <text x="1245" y="367" class="metricSmall">Precio · retorno · dispersión</text>
 
-  <circle cx="1215" cy="420" r="27" fill="#087f5b"/><text x="1207" y="428" class="pill">4</text>
-  <text x="1260" y="427" class="section">Dependencia temporal</text>
-  <text x="1205" y="470" class="body">• ACF y PACF</text>
-  <text x="1205" y="500" class="body">• Lags 1, 7 y 30 días</text>
-  <text x="1205" y="530" class="body">• Lag plots</text>
-  <text x="1205" y="560" class="body">• Persistencia temporal</text>
-  <text x="1205" y="590" class="body">• Interpretación sustentada</text>
+  <!-- Lower dependency panel -->
+  <g filter="url(#shadow)"><rect x="320" y="420" width="582" height="355" rx="12" fill="#fff" stroke="#d9e2ec" stroke-width="2"/></g>
+  <rect x="320" y="420" width="582" height="43" rx="12" fill="#15915d"/><rect x="320" y="451" width="582" height="12" fill="#15915d"/>
+  <text x="611" y="447" text-anchor="middle" class="section">DEPENDENCIA TEMPORAL</text>
+  <text x="420" y="505" class="cardtitle">ACF</text><text x="603" y="505" class="cardtitle">PACF</text><text x="785" y="505" class="cardtitle">Lag plots</text>
+  <text x="350" y="537" class="small">Autocorrelación</text><text x="532" y="537" class="small">Autocorrelación parcial</text><text x="735" y="537" class="small">Relación con retrasos</text>
+  <!-- mini acf -->
+  <g transform="translate(350,570)"><line x1="0" y1="105" x2="125" y2="105" stroke="#243b53" stroke-width="2"/><line x1="0" y1="105" x2="0" y2="0" stroke="#243b53" stroke-width="2"/><line x1="15" y1="105" x2="15" y2="15" stroke="#15915d" stroke-width="7"/><line x1="35" y1="105" x2="35" y2="35" stroke="#15915d" stroke-width="7"/><line x1="55" y1="105" x2="55" y2="50" stroke="#15915d" stroke-width="7"/><line x1="75" y1="105" x2="75" y2="68" stroke="#15915d" stroke-width="7"/><line x1="95" y1="105" x2="95" y2="80" stroke="#15915d" stroke-width="7"/><text x="4" y="126" class="small">Lag</text><text x="-2" y="-7" class="small">ACF</text></g>
+  <!-- mini pacf -->
+  <g transform="translate(532,570)"><line x1="0" y1="105" x2="125" y2="105" stroke="#243b53" stroke-width="2"/><line x1="0" y1="105" x2="0" y2="0" stroke="#243b53" stroke-width="2"/><line x1="15" y1="105" x2="15" y2="19" stroke="#15915d" stroke-width="7"/><line x1="35" y1="105" x2="35" y2="60" stroke="#15915d" stroke-width="7"/><line x1="55" y1="105" x2="55" y2="85" stroke="#15915d" stroke-width="7"/><line x1="75" y1="105" x2="75" y2="96" stroke="#15915d" stroke-width="7"/><text x="4" y="126" class="small">Lag</text><text x="-2" y="-7" class="small">PACF</text></g>
+  <!-- lag scatter -->
+  <g transform="translate(735,570)"><line x1="0" y1="105" x2="125" y2="105" stroke="#243b53" stroke-width="2"/><line x1="0" y1="105" x2="0" y2="0" stroke="#243b53" stroke-width="2"/><line x1="10" y1="95" x2="115" y2="10" stroke="#7b3fb1" stroke-width="2" stroke-dasharray="5 4"/><circle cx="18" cy="91" r="4" fill="#15915d"/><circle cx="30" cy="80" r="4" fill="#15915d"/><circle cx="43" cy="75" r="4" fill="#15915d"/><circle cx="55" cy="61" r="4" fill="#15915d"/><circle cx="68" cy="55" r="4" fill="#15915d"/><circle cx="81" cy="45" r="4" fill="#15915d"/><circle cx="94" cy="34" r="4" fill="#15915d"/><circle cx="106" cy="25" r="4" fill="#15915d"/><text x="4" y="126" class="small">Precio t-k</text><text x="-2" y="-7" class="small">Precio t</text></g>
+  <text x="350" y="730" class="small">Los lags permiten identificar persistencia, memoria y relación entre valores actuales y pasados.</text>
 
-  <!-- Metrics / rubric -->
-  <text x="65" y="685" class="section">Evidencias principales para la rúbrica</text>
-  <g filter="url(#shadow)">
-    <rect x="65" y="710" width="470" height="190" rx="18" class="card"/>
-    <rect x="565" y="710" width="470" height="190" rx="18" class="card"/>
-    <rect x="1065" y="710" width="470" height="190" rx="18" class="card"/>
-  </g>
+  <!-- Modeling panel -->
+  <g filter="url(#shadow)"><rect x="920" y="420" width="575" height="355" rx="12" fill="#fff" stroke="#d9e2ec" stroke-width="2"/></g>
+  <rect x="920" y="420" width="575" height="43" rx="12" fill="url(#purpleHeader)"/><rect x="920" y="451" width="575" height="12" fill="url(#purpleHeader)"/>
+  <text x="1207" y="447" text-anchor="middle" class="section">MODELAMIENTO TEMPORAL</text>
+  <g transform="translate(958,510)"><rect x="0" y="20" width="24" height="24" fill="none" stroke="#7b3fb1" stroke-width="3"/><rect x="28" y="0" width="24" height="24" fill="none" stroke="#7b3fb1" stroke-width="3"/><line x1="24" y1="32" x2="28" y2="16" stroke="#7b3fb1" stroke-width="3"/><text x="0" y="74" class="small">Selección</text><text x="5" y="91" class="small">de modelos</text></g>
+  <g transform="translate(1100,510)"><circle cx="22" cy="22" r="16" fill="none" stroke="#7b3fb1" stroke-width="3"/><path d="M22 8v28M8 22h28" stroke="#7b3fb1" stroke-width="3"/><text x="-8" y="74" class="small">Entrenamiento</text></g>
+  <g transform="translate(1244,510)"><rect x="4" y="4" width="36" height="35" rx="5" fill="none" stroke="#7b3fb1" stroke-width="3"/><path d="M13 22l7 7 13-15" fill="none" stroke="#7b3fb1" stroke-width="3"/><text x="2" y="74" class="small">Validación</text></g>
+  <g transform="translate(1378,510)"><polyline points="0,45 0,10 46,10" fill="none" stroke="#7b3fb1" stroke-width="3"/><polyline points="10,35 22,25 29,29 43,14" fill="none" stroke="#7b3fb1" stroke-width="3"/><text x="5" y="74" class="small">Pronóstico</text></g>
+  <line x1="970" y1="635" x2="1135" y2="635" stroke="#b0b9c5" stroke-width="2"/><text x="1207" y="645" text-anchor="middle" style="font:800 24px Arial;fill:#572b86">Baseline temporal</text><line x1="1280" y1="635" x2="1445" y2="635" stroke="#b0b9c5" stroke-width="2"/>
+  <text x="982" y="685" class="cardtitle">• Split cronológico 80/20</text><text x="982" y="715" class="cardtitle">• MAE · RMSE · MAPE</text><text x="1220" y="685" class="cardtitle">• Sin barajar datos</text><text x="1220" y="715" class="cardtitle">• Sin fuga temporal</text>
 
-  <rect x="90" y="740" width="125" height="34" rx="17" fill="#102a72"/><text x="112" y="763" class="pill">Tendencia</text>
-  <text x="90" y="810" class="metric">Precio + medias móviles</text>
-  <text x="90" y="840" class="small">Comparación de niveles, ciclos y cambios</text>
-  <text x="90" y="865" class="small">por año y mes.</text>
+  <!-- Right interpretation -->
+  <g filter="url(#shadow)"><rect x="1220" y="420" width="275" height="355" rx="12" fill="#fff" stroke="#d9e2ec" stroke-width="2"/></g>
+  <rect x="1220" y="420" width="275" height="43" rx="12" fill="url(#blueHeader)"/><rect x="1220" y="451" width="275" height="12" fill="url(#blueHeader)"/>
+  <text x="1357" y="447" text-anchor="middle" class="section">INTERPRETACIÓN</text>
+  <text x="1245" y="510" class="cardtitle">✓ Tendencia y ciclos</text><text x="1245" y="532" class="small">Comprender la evolución del precio.</text>
+  <text x="1245" y="575" class="cardtitle">✓ Riesgo</text><text x="1245" y="597" class="small">Volatilidad y drawdown.</text>
+  <text x="1245" y="640" class="cardtitle">✓ Dependencia</text><text x="1245" y="662" class="small">ACF, PACF y lags relevantes.</text>
+  <text x="1245" y="705" class="cardtitle">✓ Evidencia</text><text x="1245" y="727" class="small">Conclusiones con tablas y gráficos.</text>
 
-  <rect x="590" y="740" width="160" height="34" rx="17" fill="#7a3db8"/><text x="612" y="763" class="pill">Dependencia</text>
-  <text x="590" y="810" class="metric">ACF · PACF · lags</text>
-  <text x="590" y="840" class="small">Evalúa si el presente se relaciona</text>
-  <text x="590" y="865" class="small">con valores pasados.</text>
+  <!-- Conclusion -->
+  <g filter="url(#shadow)"><rect x="1220" y="800" width="275" height="145" rx="12" fill="#fff" stroke="#d9e2ec" stroke-width="2"/></g>
+  <rect x="1220" y="800" width="275" height="39" rx="12" fill="#102a72"/><rect x="1220" y="827" width="275" height="12" fill="#102a72"/>
+  <text x="1357" y="825" text-anchor="middle" class="section">CONCLUSIÓN</text>
+  <text x="1240" y="870" class="small">El análisis integra calidad de datos,</text><text x="1240" y="889" class="small">características, tendencia, riesgo y</text><text x="1240" y="908" class="small">dependencia temporal para explicar</text><text x="1240" y="927" class="small">el comportamiento de Bitcoin.</text>
 
-  <rect x="1090" y="740" width="130" height="34" rx="17" fill="#087f5b"/><text x="1113" y="763" class="pill">Riesgo</text>
-  <text x="1090" y="810" class="metric">Volatilidad + drawdown</text>
-  <text x="1090" y="840" class="small">Cuantifica dispersión, caídas y</text>
-  <text x="1090" y="865" class="small">periodos de mayor incertidumbre.</text>
-
-  <!-- Bottom summary -->
-  <rect x="65" y="950" width="1470" height="105" rx="18" fill="url(#green)" filter="url(#shadow)"/>
-  <text x="100" y="990" class="title" style="font-size:28px">Conclusión metodológica</text>
-  <text x="100" y="1024" class="footer">Una serie financiera no se explica solo con el precio inicial y final: se deben integrar calidad de datos, tendencia,</text>
-  <text x="100" y="1048" class="footer">rendimientos, volatilidad, drawdown, ACF/PACF, lags, modelamiento temporal y limitaciones.</text>
-
-  <text x="1450" y="1085" text-anchor="end" class="small">Proyecto reproducible · Python · Jupyter · RA 2.1</text>
+  <!-- Footer tools -->
+  <line x1="35" y1="985" x2="1495" y2="985" stroke="#d9e2ec" stroke-width="2"/>
+  <text x="55" y="1012" class="footer">🐍 Python</text><text x="230" y="1012" class="footer">▦ pandas</text><text x="390" y="1012" class="footer">◈ numpy</text><text x="540" y="1012" class="footer">◒ matplotlib</text><text x="730" y="1012" class="footer">∿ statsmodels</text><text x="930" y="1012" class="footer">◆ scikit-learn</text><text x="1190" y="1012" class="footer">&lt;/&gt; Código reproducible</text>
 </svg>
