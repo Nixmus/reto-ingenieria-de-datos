@@ -6,7 +6,7 @@
     <linearGradient id="blue" x1="0" x2="1"><stop offset="0" stop-color="#114b9b"/><stop offset="1" stop-color="#1769aa"/></linearGradient>
     <linearGradient id="purple" x1="0" x2="1"><stop offset="0" stop-color="#572b86"/><stop offset="1" stop-color="#7b3fb1"/></linearGradient>
     <style>
-      .title{font:800 38px Arial,sans-serif;fill:#102a72;letter-spacing:.6px}.subtitle{font:700 17px Arial,sans-serif;fill:#243b53}
+      .title{font:800 38px Arial,sans-serif;fill:#102a72;letter-spacing:.6px}.subtitle{font:700 16px Arial,sans-serif;fill:#243b53}
       .bar{font:800 13px Arial,sans-serif;fill:#fff}.head{font:800 16px Arial,sans-serif;fill:#102a72}.body{font:400 12px Arial,sans-serif;fill:#243b53}.small{font:400 11px Arial,sans-serif;fill:#52606d}
       .metric{font:800 14px Arial,sans-serif;fill:#243b53}.footer{font:800 13px Arial,sans-serif;fill:#102a72}.icon{stroke:#1261a0;stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
     </style>
@@ -61,10 +61,16 @@
   <g transform="translate(1050,204)"><circle cx="15" cy="15" r="15" fill="#1769aa"/><polyline points="7,7 7,23 25,23 12,13" fill="none" stroke="#fff" stroke-width="2"/><text x="43" y="20" class="metric">Drawdown</text></g>
   <g transform="translate(1050,259)"><circle cx="15" cy="15" r="15" fill="#168aad"/><rect x="7" y="16" width="4" height="7" fill="#fff"/><rect x="13" y="12" width="4" height="11" fill="#fff"/><rect x="19" y="7" width="4" height="16" fill="#fff"/><text x="43" y="20" class="metric">Retorno</text></g>
   <g transform="translate(1050,314)"><circle cx="15" cy="15" r="15" fill="#572b86"/><text x="9" y="21" style="font:800 15px Arial;fill:#fff">%</text><text x="43" y="20" class="metric">Riesgo</text></g>
-  <text x="1050" y="355" class="small">Precio · retorno · dispersión</text>
+  <text x="1050" y="361" class="small">Precio · retorno · dispersión</text>
 
-  <!-- Results card, explicitly separated from metrics -->
-  <g transform="translate(1300,94)"><text x="0" y="12" class="head">Precio inicial</text><text x="0" y="31" class="small">Comparación de extremos.</text><text x="0" y="76" class="head">Precio final</text><text x="0" y="95" class="small">Periodo observado.</text><text x="0" y="140" class="head">Variación</text><text x="0" y="159" class="small">Cambio absoluto y relativo.</text><text x="0" y="204" class="head">Riesgo</text><text x="0" y="223" class="small">Volatilidad y drawdown.</text><text x="0" y="268" class="head">Dependencia</text><text x="0" y="287" class="small">ACF, PACF y lags.</text></g>
+  <!-- Results card: 5 blocks with 56px step, last text at y=347 (card ends at y=373) -->
+  <g transform="translate(1300,92)">
+    <text x="0" y="12" class="head">Precio inicial</text><text x="0" y="31" class="small">Comparación de extremos.</text>
+    <text x="0" y="68" class="head">Precio final</text><text x="0" y="87" class="small">Periodo observado.</text>
+    <text x="0" y="124" class="head">Variación</text><text x="0" y="143" class="small">Cambio absoluto y relativo.</text>
+    <text x="0" y="180" class="head">Riesgo</text><text x="0" y="199" class="small">Volatilidad y drawdown.</text>
+    <text x="0" y="236" class="head">Dependencia</text><text x="0" y="255" class="small">ACF, PACF y lags.</text>
+  </g>
 
   <!-- Bottom row, three independent cards -->
   <g filter="url(#shadow)"><rect x="280" y="405" width="490" height="365" rx="11" fill="#fff" stroke="#d9e2ec" stroke-width="2"/><rect x="790" y="405" width="235" height="365" rx="11" fill="#fff" stroke="#d9e2ec" stroke-width="2"/><rect x="1045" y="405" width="220" height="365" rx="11" fill="#fff" stroke="#d9e2ec" stroke-width="2"/></g>
